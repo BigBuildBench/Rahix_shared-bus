@@ -1,0 +1,27 @@
+[package]
+name = "shared-bus"
+version = "0.3.1"
+authors = ["Rahix <rahix@rahix.de>"]
+edition = "2018"
+
+description = "Abstraction for sharing a bus between multiple devices."
+repository = "https://github.com/Rahix/shared-bus"
+documentation = "https://docs.rs/shared-bus"
+readme = "README.md"
+keywords = ["embedded-hal", "embedded-hal-impl", "i2c", "spi", "bus"]
+categories = ["embedded", "no-std"]
+license = "MIT OR Apache-2.0"
+
+[package.metadata.docs.rs]
+all-features = true
+
+[dependencies]
+
+[dev-dependencies]
+embedded-hal-mock = "0.9"
+
+[features]
+std = ["once_cell"]
+xtensa = ["xtensa-lx", "spin"]
+cortex-m = ["dep:cortex-m", "atomic-polyfill"]
+eh-alpha = ["embedded-hal-alpha"]
